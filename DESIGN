@@ -1,0 +1,92 @@
+Sibchyl System
+--------------
+Sibchyl System is a rhythm videogame that consists on a piano-like gameplay 
+where the objective is to score as much points as possible depending on combo 
+and accuracy.
+
+Gameplay
+--------
+The player needs maps to play them. Once the player has the maps, depending on 
+their difficulty they have a variation of BPM (speed), hit time frame, and 
+lanes (2 to 8).
+
+The maps have music alongisde a background image.
+
+Users can change the skin of the game by changing the resource files.
+
+Maps
+----
+Maps are a text file that indicates the name of the song, bpm, hit time frame, 
+lanes, and the map data alongisde the name of the creator.
+
+TODO: design a map text format
+
+TODO: read mania's format
+
+Score system
+------------
+
+WORK IN PROGRESS
+
+TODO: Add a 200? Add a literally perfect hit timing reward? like 350/400? 
+factor combo into score?
+
+PERFECT: 300 points
+OK:      100 points
+BAD:      50 points
+MISS:      0 points
+
+Accuracy calculation:
+say the player hits 100 notes
+50 are 300s meaning they are (50 * 1) / 100 * 100
+45 are 100s meaning they are (45 * 0.33) / 100 * 100
+5 are 50s meaning they are (5 * 0.16) / 100 * 100
+
+General formula:
+
+300s: 1
+100s: 0.33
+50s:  0.16
+
+Let the number of 300s  be P
+Let the number of 100s  be K
+Let the number of  50s  be B
+Let the number of notes be T
+
+Percentage = (P + K * 0.33 + B * 0.16) / T * 100
+
+case scenario:
+457 notes
+344 300s
+99  100s
+12  50s
+2   misses
+
+(344 + 99 * 0.33 + 12 * 0.16) / 457 * 100 = ~82.84%
+
+Grades depending on accuracy
+---------------------------
+SS = 100% 
+S  >=99% & <100%
+A  >=95% & <99%
+B  >=85% & <95%
+C  >=75% & <85%
+D  >=65% & <75%
+E  >=55% & <65%
+F  >=45% & <55%
+U  >=0%  & <45%
+
+Options
+-------
+Volumes
+Skin
+Show combo
+Scrolling speed
+
+TODO: maybe mods?
+
+Future plans
+------------
+Networked game
+Score submission
+Account
