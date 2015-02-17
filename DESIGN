@@ -90,3 +90,34 @@ Future plans
 Networked game
 Score submission
 Account
+
+Technical model
+---------------
+Remember to modularize all parts so they can be replaced easily: 
+
+context system
+- SDL libraries for events, windowing, image loading, sound playing,
+font handling config system - reads data from a file to determine what
+are the options to set at the start of the program.
+
+graphic system 
+- setting up of all the graphic parameters.
+
+rendering system 
+- the actual drawing we do to the screen, might be spared in game entities...  
+input system - this gets the input in real time of the keyboard and mouse
+constantly and other systems check this to know what to do.
+logic system
+- this is the part of the program which says what to do at any given
+moment. it is dependant on the logic system. 
+score system - 
+this runs when the user is playing and determines what the score is based on 
+the input system data. 
+sound system 
+- this handles all music and sound effects as well as volume, etc. 
+replay system - 
+this manages all the plays, they are saved as the user plays and discarded 
+when the map is not finished. In the event it is saved.  
+map system - 
+this transforms all the map file data into in executable data to be given to 
+the rendering system.
