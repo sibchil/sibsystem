@@ -10,14 +10,14 @@ The player needs maps to play them. Once the player has the maps, depending on
 their difficulty they have a variation of BPM (speed), hit time frame, and 
 lanes (2 to 8).
 
-The maps have music alongisde a background image.
+The maps have music alongside a background image.
 
 Users can change the skin of the game by changing the resource files.
 
 Maps
 ----
-Maps are a text file that indicates the name of the song, bpm, hit time frame, 
-lanes, and the map data alongisde the name of the creator.
+Maps are a text file that indicates the name of the song, BPM, hit time frame, 
+lanes, and the map data alongside the name of the creator.
 
 TODO: design a map text format
 
@@ -97,8 +97,11 @@ Remember to modularize all parts so they can be replaced easily:
 
 context system
 - SDL libraries for events, windowing, image loading, sound playing,
-font handling config system - reads data from a file to determine what
-are the options to set at the start of the program.
+font handling. 
+
+config system 
+- reads data from a file to determine what
+are the options to set at the start of the program and writes them after if changed.
 
 graphic system 
 - setting up of all the graphic parameters.
@@ -107,17 +110,22 @@ rendering system
 - the actual drawing we do to the screen, might be spared in game entities...  
 input system - this gets the input in real time of the keyboard and mouse
 constantly and other systems check this to know what to do.
+
 logic system
 - this is the part of the program which says what to do at any given
-moment. it is dependant on the logic system. 
-score system - 
-this runs when the user is playing and determines what the score is based on 
-the input system data. 
+moment. it is dependent on the logic system.
+ 
+score system
+- this runs when the user is playing and determines what the score is based on 
+the input system data.
+ 
 sound system 
-- this handles all music and sound effects as well as volume, etc. 
-replay system - 
-this manages all the plays, they are saved as the user plays and discarded 
-when the map is not finished. In the event it is saved.  
-map system - 
-this transforms all the map file data into in executable data to be given to 
+- this handles all music and sound effects as well as volume, etc.
+ 
+replay system 
+- this manages all the plays, they are saved as the user plays and discarded 
+when the map is not finished. In the event it is saved.
+ 
+map system 
+- this transforms all the map file data into in executable data to be given to 
 the rendering system.
